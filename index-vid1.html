@@ -17,19 +17,14 @@
         .intro-video {
             position: relative;
             width: 100%;
-            max-width: 1100px;
-            margin: 30px auto 0 auto;
-            border-radius: 20px;
+            height: 100vh;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .intro-video video {
             width: 100%;
-            max-height: 600px;
+            height: 100%;
             object-fit: cover;
-            display: block;
-            background: black;
         }
 
         .intro-overlay {
@@ -55,7 +50,15 @@
             margin-bottom: 20px;
         }
 
-
+        .enter-button {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
         .container {
             max-width: 1100px;
@@ -125,7 +128,7 @@
         }
 
         .section {
-            background: #f4ecff;
+            background: white;
             margin-top: 25px;
             padding: 25px;
             border-radius: 20px;
@@ -191,6 +194,11 @@
             Your browser does not support the video tag.
         </video>
 
+        <div class="intro-overlay">
+            <h1>Welcome to Sahana's Campaign</h1>
+            <p>Sports Vice Captain Nominee</p>
+            <a href="#campaign-content" class="enter-button">Enter Campaign Page</a>
+        </div>
     </section>
 
     <div class="container" id="campaign-content">
@@ -264,7 +272,7 @@
         </div>
 
         <div class="vote-message">
-            Vote for Sahana Sriram – Vice Sports Captain
+            Vote for Sahana – Sports Vice Captain
         </div>
 
         <footer>
