@@ -14,6 +14,50 @@
             color: #222;
         }
 
+        .intro-video {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: black;
+        }
+
+        .intro-video video {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            background: black;
+        }
+
+        .intro-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.45);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .intro-overlay h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .intro-overlay p {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
         .container {
             max-width: 1100px;
             margin: auto;
