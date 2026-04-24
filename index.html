@@ -35,78 +35,28 @@
             background: black;
         }
 
-        .intro-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            background: rgba(0, 0, 0, 0.45);
-            padding: 30px;
-            border-radius: 20px;
-        }
-
-        .intro-overlay h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        .intro-overlay p {
-            font-size: 22px;
-            margin-bottom: 20px;
-        }
-
-
-
         .container {
             max-width: 1100px;
             margin: auto;
             padding: 20px;
         }
 
-        .hero {
+        .section {
             background: white;
+            margin-top: 25px;
+            padding: 25px;
             border-radius: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            margin-top: 30px;
         }
 
-        .top-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .left-side {
-            text-align: center;
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .right-side {
-            text-align: center;
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .profile-pic,
-        .school-logo {
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 20px;
-            border: 4px solid #ddd;
-        }
-
-        h1 {
+        h1,
+        h2 {
             text-align: center;
             color: #0b4d91;
             margin-top: 25px;
+        }
+
+        h1 {
             font-size: 40px;
         }
 
@@ -117,87 +67,260 @@
             margin-bottom: 30px;
         }
 
-        .firefox-symbol {
-            margin-top: 20px;
-            text-align: center;
+        /* --- New Kinetic Timeline CSS --- */
+        .kinetic-timeline-section {
+            background-color: #f1f1ff;
+            /* Light purple background */
+            padding: 60px 20px;
         }
 
-        .firefox-symbol img {
-            width: 100px;
-            height: 100px;
-        }
-
-        .section {
-            background: #f4ecff;
-            margin-top: 25px;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        .timeline-section {
-            background: #efe6fb;
-        }
-
-        .timeline-subtitle {
-            text-align: center;
-            color: #6d5ca8;
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-
-        .timeline {
-            position: relative;
-            margin: 40px auto;
-            max-width: 900px;
-            border-left: 4px solid #d6c5f7;
-            padding-left: 40px;
-        }
-
-        .timeline li {
-            list-style: none;
-            position: relative;
-            margin-bottom: 35px;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-        }
-
-        .timeline li::before {
-            content: "";
-            position: absolute;
-            left: -52px;
-            top: 25px;
-            width: 18px;
-            height: 18px;
-            color: #0b4d91;
-            margin-bottom: 15px;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
+        .kinetic-timeline-section h2 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2c004d;
+            /* Dark purple/black */
             margin-bottom: 10px;
         }
 
-        .qr-section {
-            text-align: center;
-            margin-top: 30px;
+        .kinetic-timeline-subtitle {
+            font-size: 20px;
+            color: #6a4a8c;
+            /* Medium purple */
+            margin-bottom: 60px;
         }
 
-        .qr-section img {
-            width: 200px;
-            height: 200px;
+        .kinetic-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* The central vertical line */
+        .kinetic-timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #d8c4f1;
+            /* Faint purple line */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        /* Container for each timeline block */
+        .timeline-block {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        /* The icons/circles on the timeline */
+        .timeline-icon {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            right: -22px;
+            /* Centered on the line */
+            background-color: #f1f1ff;
+            /* Match section background */
+            border: 2px solid #a87df2;
+            /* Purple border */
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        /* Make right-side icons */
+        .timeline-block.right .timeline-icon {
+            left: -22px;
+        }
+
+        /* Blocks on the left */
+        .timeline-block.left {
+            left: 0;
+            text-align: right;
+        }
+
+        /* Blocks on the right */
+        .timeline-block.right {
+            left: 50%;
+            text-align: left;
+        }
+
+        /* The actual content card */
+        .timeline-content {
+            padding: 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            /* Soft shadow */
+        }
+
+        /* Left-side block text aligns right */
+        .timeline-block.left .timeline-content {
+            margin-right: 20px;
+        }
+
+        /* Right-side block text aligns left */
+        .timeline-block.right .timeline-content {
+            margin-left: 20px;
+        }
+
+        .timeline-content h3 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c004d;
+            margin: 0 0 10px 0;
+        }
+
+        .timeline-content .year {
+            font-size: 56px;
+            font-weight: bold;
+            color: #e2e2f9;
+            /* Very faint purple/gray */
+            position: absolute;
+            top: 20px;
+            margin: 0;
+        }
+
+        .timeline-block.left .year {
+            right: 30px;
+        }
+
+        .timeline-block.right .year {
+            left: 30px;
+        }
+
+        .timeline-content p {
+            font-size: 16px;
+            color: #555;
+            margin: 0;
+            line-height: 1.5;
+            /* Extra top margin to clear the absolute year */
+            margin-top: 70px;
+        }
+
+        /* Unstyled nested lists */
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-content li {
+            margin-bottom: 5px;
+        }
+
+        /* Extra margin for lists */
+        .timeline-content ul.achievement-list {
+            margin-top: 70px;
+        }
+
+        /* Desktop specific content padding */
+        .timeline-content p,
+        .timeline-content ul.achievement-list {
+            padding: 0 15px;
+        }
+
+        /* Extra text alignment control for left block on desktop */
+        .timeline-block.left .timeline-content p,
+        .timeline-block.left .timeline-content ul {
+            text-align: right;
+        }
+
+        /* Special text color and alignment for the current year */
+        .current-block .timeline-icon {
+            border-color: #ff4500;
+            color: #ff4500;
+        }
+
+        .current-block .year {
+            color: #ffdacc;
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 768px) {
+            .kinetic-timeline::after {
+                left: 31px;
+                /* Move line to the left */
+            }
+
+            .timeline-block {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-block.left {
+                text-align: left;
+            }
+
+            .timeline-block.left,
+            .timeline-block.right {
+                left: 0;
+            }
+
+            .timeline-icon {
+                left: 15px;
+                right: auto;
+                top: 20px;
+            }
+
+            .timeline-block.right .timeline-icon {
+                left: 15px;
+            }
+
+            .timeline-block.left .timeline-content,
+            .timeline-block.right .timeline-content {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .timeline-block.left .timeline-content p,
+            .timeline-block.left .timeline-content ul {
+                text-align: left;
+            }
+
+            .timeline-content .year {
+                font-size: 40px;
+                position: static;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .timeline-content p,
+            .timeline-content ul.achievement-list {
+                margin-top: 0;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* --- Existing Non-Timeline Styles --- */
+        ul.simple-list {
+            padding-left: 20px;
+            list-style: disc;
+        }
+
+        ul.simple-list li {
+            margin-bottom: 10px;
         }
 
         .vote-message {
             text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-            color: #d62828;
+            color: #d32f2f;
+            font-family: sans-serif;
             margin-top: 20px;
         }
 
@@ -207,133 +330,148 @@
             color: #555;
             margin-top: 30px;
         }
-
-        @media (max-width: 768px) {
-            .top-section {
-                flex-direction: column;
-            }
-
-            h1 {
-                font-size: 30px;
-            }
-        }
     </style>
 </head>
 
 <body>
 
-    <!-- Intro Video Section -->
     <section class="intro-video">
         <video autoplay muted loop controls>
             <source src="videos/sahana_vid_updated.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-
     </section>
 
     <div class="container" id="campaign-content">
 
-        <div class="section timeline-section">
+        <div class="section kinetic-timeline-section">
             <h2>Academic & Co-curricular Achievements</h2>
-            <p class="timeline-subtitle">Years of dedication, milestones of excellence — every achievement a step closer
-                to leadership.</p>
+            <p class="kinetic-timeline-subtitle">Years of dedication, milestones of excellence — every achievement a
+                step closer to leadership.</p>
 
-            <div class="timeline">
-                <ul>
-                    <li><strong>🎓 UKG</strong>
-                        <ul>
-                            <li>🎤 Served as the Master of Ceremonies for the Graduation Ceremony.</li>
-                        </ul>
-                    </li>
+            <div class="kinetic-timeline">
 
-                    <li><strong>🌱 Grade 1</strong>
-                        <ul>
+                <div class="timeline-block left">
+                    <div class="timeline-icon">🎓</div>
+                    <div class="timeline-content">
+                        <span class="year">UKG</span>
+                        <h3>Master of Ceremonies</h3>
+                        <p>Served as the Master of Ceremonies for the Graduation Ceremony. 🎤</p>
+                    </div>
+                </div>
+
+                <div class="timeline-block right">
+                    <div class="timeline-icon">🌱</div>
+                    <div class="timeline-content">
+                        <span class="year">Grade 1</span>
+                        <h3>Academic Excellence</h3>
+                        <ul class="achievement-list simple-list">
                             <li>🏆 Honored with the Academic Excellence Award for top-tier scholastic performance.</li>
                             <li>🎯 Secured 1st Place in the Target Throw event during the Annual Sports Meet.</li>
                             <li>🌟 Earned multiple commendations for performance at the Yasmin Kids Festival.</li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li><strong>📖 Grade 2</strong>
-                        <ul>
-                            <li>🧠 Awarded for Distinguished Performance in the Student Enrichment Programme.</li>
-                        </ul>
-                    </li>
+                <div class="timeline-block left">
+                    <div class="timeline-icon">📖</div>
+                    <div class="timeline-content">
+                        <span class="year">Grade 2</span>
+                        <h3>Distinguished Performance</h3>
+                        <p>🧠 Awarded for Distinguished Performance in the Student Enrichment Programme.</p>
+                    </div>
+                </div>
 
-                    <li><strong>💎 Grade 3</strong>
-                        <ul>
-                            <li>🚩 Appointed as Ruby House Captain, overseeing house activities and student
-                                coordination.</li>
-                        </ul>
-                    </li>
+                <div class="timeline-block right">
+                    <div class="timeline-icon">💎</div>
+                    <div class="timeline-content">
+                        <span class="year">Grade 3</span>
+                        <h3>House Leadership Begins</h3>
+                        <p>🚩 Appointed as Ruby House Captain, overseeing house activities and student coordination.</p>
+                    </div>
+                </div>
 
-                    <li><strong>🔸 Grade 4</strong>
-                        <ul>
-                            <li>🎖️ Elected as Amber House Vice-Captain, supporting house administration and spirit.
-                            </li>
-                        </ul>
-                    </li>
+                <div class="timeline-block left">
+                    <div class="timeline-icon">🔸</div>
+                    <div class="timeline-content">
+                        <span class="year">Grade 4</span>
+                        <h3>Vice-Captain Role</h3>
+                        <p>🎖️ Elected as Amber House Vice-Captain, supporting house administration and spirit.</p>
+                    </div>
+                </div>
 
-                    <li><strong>🔝 Grade 5</strong>
-                        <ul>
+                <div class="timeline-block right">
+                    <div class="timeline-icon">🔝</div>
+                    <div class="timeline-content">
+                        <span class="year">Grade 5</span>
+                        <h3>Championship Captain</h3>
+                        <ul class="achievement-list simple-list">
                             <li>💪 Appointed as Topaz House Captain; successfully led the house to 1st Position and the
                                 Overall Championship.</li>
                             <li>⚜️ Enrolled in Scouts and Guides, building foundational skills in discipline and
                                 teamwork.</li>
                             <li>⛺ Represented the school at the Bharat Scouts and Guides Camp.</li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li><strong>🛡️ Grade 6</strong>
-                        <ul>
+                <div class="timeline-block left">
+                    <div class="timeline-icon">🛡️</div>
+                    <div class="timeline-content">
+                        <span class="year">Grade 6</span>
+                        <h3>Exemplary Behaviour</h3>
+                        <ul class="achievement-list simple-list">
                             <li>✨ Conferred with the Exemplary Behaviour Award for consistent discipline and school
                                 spirit.</li>
                             <li>🌲 Participated in the Bharat Scouts and Guides Camp for advanced skill development.
                             </li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li><strong>🌎 Grade 7</strong>
-                        <ul>
+                <div class="timeline-block right">
+                    <div class="timeline-icon">🌎</div>
+                    <div class="timeline-content">
+                        <span class="year">Grade 7</span>
+                        <h3>International Recognition</h3>
+                        <ul class="achievement-list simple-list">
                             <li>🌍 Qualified for Stage 2 of the International English Olympiad (IEO), achieving
                                 high-ranking recognition for the school.</li>
                             <li>🏅 Recipient of Academic Medals and Certificates of Merit from ATAA Education.</li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li><strong>🏛️ Grade 8</strong>
-                        <ul>
+                <div class="timeline-block left">
+                    <div class="timeline-icon">🏛️</div>
+                    <div class="timeline-content">
+                        <span class="year">Grade 8</span>
+                        <h3>Debate & Sports Milestones</h3>
+                        <ul class="achievement-list simple-list">
                             <li>⚖️ Secured 1st Place in the Mock Parliament, demonstrating excellence in debate and
                                 public speaking.</li>
                             <li>🏸 Achieved 2nd Place in the Inter-house Badminton Competition.</li>
                             <li>🇮🇳 Nominated to represent the school at the Embassy of India for the Vriksh Hindi
                                 Diwas Elocution Competition.</li>
                         </ul>
-                    </li>
+                    </div>
+                </div>
 
-                    <li><strong>🔥 Grade 9 (Current)</strong>
-                        <ul>
-                            <li>🚀 Qualified for and participated in the Zonal Badminton Competition, representing the
-                                school at the regional level.</li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="timeline-block right current-block">
+                    <div class="timeline-icon">🔥</div>
+                    <div class="timeline-content">
+                        <span class="year">Grade 9</span>
+                        <h3>Zonal Competition</h3>
+                        <p>🚀 Qualified for and participated in the Zonal Badminton Competition, representing the school
+                            at the regional level.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <!-- <div class="section">
-            <h2>Medals & Recognition</h2>
-            <ul>
-                <li>Gold Medal – Annual Sports Meet</li>
-                <li>Silver Medal – District Level Competition</li>
-                <li>Best Team Player Award</li>
-                <li>Outstanding Sports Participation Certificate</li>
-            </ul>
-        </div> -->
-
         <div class="section">
             <h2>Why Choose Sahana?</h2>
-            <ul>
+            <ul class="simple-list">
                 <li>Strong leadership qualities</li>
                 <li>Supports and motivates fellow students</li>
                 <li>Dedicated to sports and teamwork</li>
@@ -344,58 +482,38 @@
 
         <div class="section">
             <h2>My Commitments as Vice Sports Captain <em>"Building a Stronger Sports Culture"</em></h2>
-            <ul>
+            <ul class="simple-list">
                 <li>🏅 <b>Expand the Sports Calendar:</b> Increase the frequency of athletic events to foster a culture
-                    of fitness and
-                    high participation across all grade levels.</li>
-
+                    of fitness and high participation across all grade levels.</li>
                 <li>🎯 <b>Diversify Recreational Activities:</b> Introduce engaging, non-traditional events like hula
-                    hoop races, sack
-                    races, and collaborative team challenges to make sports inclusive and fun.</li>
-
+                    hoop races, sack races, and collaborative team challenges to make sports inclusive and fun.</li>
                 <li>♟️ <b>Promote Strategic Indoor Gaming:</b> Scale up indoor competitions for chess, carrom, and
-                    strategy-based games
-                    to sharpen mental agility and focus.</li>
-
+                    strategy-based games to sharpen mental agility and focus.</li>
                 <li>🏀 <b>Upgrade Facilities & Gear:</b> Advocate for premium sports equipment and enhanced physical
-                    education resources
-                    to provide a superior training environment for all.</li>
-
+                    education resources to provide a superior training environment for all.</li>
                 <li>🤝 <b>Foster Inclusive Participation:</b> Cultivate a "sports-for-all" environment where every
-                    student feels
-                    empowered to participate, regardless of their prior skill or experience.</li>
-
+                    student feels empowered to participate, regardless of their prior skill or experience.</li>
                 <li>⚖️ <b>Champion Equal Opportunity:</b> Ensure fair and transparent access to all competitive events,
-                    guaranteeing
-                    that every student has a platform to showcase their talent.</li>
-
+                    guaranteeing that every student has a platform to showcase their talent.</li>
                 <li>💬 <b>Student-Led Innovation:</b> Establish a feedback loop to gather student insights and actively
-                    collaborate with
-                    school leadership to implement practical improvements.</li>
-                <li>👥 <b>Cultural Representation:</b> Actively represent the
-                    school’s values and spirit in prestigious external competitions and national observances.</li>
+                    collaborate with school leadership to implement practical improvements.</li>
+                <li>👥 <b>Cultural Representation:</b> Actively represent the school’s values and spirit in prestigious
+                    external competitions and national observances.</li>
             </ul>
         </div>
 
-        <!-- <div class="vote-message">
-            <em>Every great team starts with a single decision. Let's build something extraordinary — together</em>
-            <img src="images/firefox.jpeg" alt="Firefox Symbol"
-                style="width:40px; vertical-align:middle; margin-right:10px;">
-            Vote for Sahana Sriram – Vice Sports Captain 🗳️
-
-        </div> -->
-        <div class="vote-message" style="text-align: center; color: #d32f2f; font-family: sans-serif;">
+        <div class="vote-message">
             <div style="margin-bottom: 10px;">
                 <em style="font-weight: bold;">Every great team starts with a single decision. Let's build something
                     extraordinary — together</em>
             </div>
-
             <div
                 style="display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2em;">
                 <img src="images/firefox.jpeg" alt="Firefox Symbol" style="width:40px; margin-right:10px;">
                 <span>Vote for Sahana Sriram – Vice Sports Captain 🗳️</span>
             </div>
         </div>
+
         <footer>
             Thank you for your support!
         </footer>
